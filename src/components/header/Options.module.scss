@@ -1,0 +1,20 @@
+.optionsList {
+  list-style: none;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    width: 100%;
+    padding: 8px 5px;
+    font-size: 13px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #F0FBFE;
+    }
+  }
+}

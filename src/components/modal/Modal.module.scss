@@ -1,0 +1,7 @@
+@import "../../styles/variables.scss";
+.modalContainer {
+  background-color: $primary-color;
+  position: absolute;
+  border-radius: 5px;
+  color: $primary-font;
+}
