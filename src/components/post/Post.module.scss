@@ -2,66 +2,81 @@
 .post {
   color: $primary-font;
   margin-bottom: 10px;
-  padding: 20px;
+  // padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: $primary-color;
 
-  .header {
-    font-size: 10px;
-    display: flex;
-    justify-content: space-between;
-
-    .userInfos {
+  .cover {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .body {
+    padding: 20px;
+    .header {
+      font-size: 10px;
       display: flex;
-      .imgContainer {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 10px;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
+      justify-content: space-between;
 
-      .infos {
-        h3 {
-          margin: 0;
-          &:hover {
-            color: #155b70;
+      .userInfos {
+        display: flex;
+        .imgContainer {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 10px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .infos {
+          h3 {
+            margin: 0;
+            &:hover {
+              color: #155b70;
+            }
           }
         }
       }
     }
-  }
-  .content {
-    padding: 5px 50px;
-    h1 {
-      font-size: 22px;
-      margin: 5px 0;
-      &:hover {
-        color: #155b70;
-      }
-    }
-
-    .stats {
-      display: flex;
-      gap: 10px;
-      font-size: 12px;
-      font-weight: 500;
-
-      .stat {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding: 10px 5px;
-        border-radius: 8px;
-        cursor: pointer;
+    .content {
+      padding: 5px 50px;
+      h1 {
+        font-size: 22px;
+        margin: 5px 0;
         &:hover {
-          background-color: #d9edf3;
+          color: #155b70;
+        }
+      }
+
+      .stats {
+        display: flex;
+        gap: 10px;
+        font-size: 12px;
+        font-weight: 500;
+
+        .stat {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 10px 5px;
+          border-radius: 8px;
+          cursor: pointer;
+          &:hover {
+            background-color: #d9edf3;
+          }
         }
       }
     }
