@@ -12,7 +12,7 @@ const Header = () => {
   const [openModal, setopenModal] = useState(false);
 
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.logo}>Meu blog</div>
 
       <div className={styles.search}>
@@ -41,7 +41,7 @@ const Header = () => {
           )}
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
