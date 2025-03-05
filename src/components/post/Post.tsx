@@ -1,4 +1,3 @@
-import { postsMock } from "@/mock/postsMock";
 import React, { useState } from "react";
 import styles from "./Post.module.scss";
 import Image from "next/image";
@@ -8,12 +7,14 @@ import Favorite from "../favorite/Favorite";
 import CommentIcon from "@/icons/CommentIcon";
 import LikeIcon from "@/icons/LikeIcon";
 import Link from "next/link";
-
-const Post = () => {
+import { IPost } from "@/interfaces/IPost";
+interface PostProps {
+  post: IPost;
+}
+const Post = ({ post }: PostProps) => {
   const [isFavorite, setIsfavorite] = useState(false);
-  const post = postsMock[0];
-  const likeText = post.LikeCount === 1 ? "Like" : "Likes";
-  const commentText = post.CommentCount === 1 ? "Comment" : "Comments";
+  const likeText = post.likeCount === 1 ? "Like" : "Likes";
+  const commentText = post.commentCount === 1 ? "Comment" : "Comments";
 
   const favorite = () => {
     setIsfavorite(true);
@@ -23,7 +24,7 @@ const Post = () => {
   };
   return (
     <div className={styles.post}>
-      {post.CoverImageUrl && (
+      {post.coverImageUrl && (
         <div className={styles.cover}>
           <Image src={example} alt="cover" />
         </div>
@@ -36,9 +37,9 @@ const Post = () => {
             </div>
             <div className={styles.infos}>
               <Link href={""}>
-                <h3>{post.CreatedBy}</h3>
+                <h3>{post.createdBy}</h3>
               </Link>
-              <p>{post.CreatedAt}</p>
+              <p>{post.createdAt}</p>
             </div>
           </div>
           <Favorite
@@ -49,15 +50,15 @@ const Post = () => {
         </div>
         <div className={styles.content}>
           <Link href={""}>
-            <h1>{post.Title}</h1>
+            <h1>{post.title}</h1>
           </Link>
 
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <LikeIcon /> {post.LikeCount} {likeText}
+              <LikeIcon /> {post.likeCount} {likeText}
             </div>
             <div className={styles.stat}>
-              <CommentIcon /> {post.CommentCount} {commentText}
+              <CommentIcon /> {post.commentCount} {commentText}
             </div>
           </div>
         </div>

@@ -1,11 +1,11 @@
 export interface IPost {
-  Id: number;
-  Title: string;
-  Content: string;
-  CreatedAt: string;
-  UpdatedAt: string;
-  CoverImageUrl: string;
-  LikeCount: number;
-  CommentCount: number;
-  CreatedBy: string;
+  id: number;
+  title: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  coverImageUrl: string;
+  likeCount: number;
+  commentCount: number;
+  createdBy: string;
 }
