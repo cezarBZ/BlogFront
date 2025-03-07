@@ -4,8 +4,12 @@ import Divider from "../divider/Divider";
 import Logouticon from "@/icons/Logouticon";
 import SettingsIcon from "@/icons/SettingsIcon";
 import ProfileIcon from "@/icons/ProfileIcon";
+import { logout } from "@/services/authService";
 
 const Options = () => {
+  const handleLogout = () => {
+    logout();
+  };
   return (
     <ul className={styles.optionsList}>
       <li>
@@ -16,7 +20,7 @@ const Options = () => {
         <SettingsIcon /> Settings
       </li>
       <Divider />
-      <li style={{ fontSize: "10px", fontWeight: "bold" }}>
+      <li style={{ fontSize: "10px", fontWeight: "bold" }} onClick={handleLogout}>
         <Logouticon />
         Logout
       </li>

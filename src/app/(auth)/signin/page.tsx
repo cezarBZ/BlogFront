@@ -8,7 +8,7 @@ interface FormValues {
   email: string;
   password: string;
 }
-const Login = () => {
+const Signin = () => {
   const {
     register,
     handleSubmit,
@@ -65,7 +65,7 @@ const Login = () => {
         </div>
         <div className={styles.register}>
           <p>
-            Dont have an account? <Link href="">Sign up</Link>
+            Dont have an account? <Link href="/signup">Sign up</Link>
           </p>
         </div>
       </section>
@@ -73,4 +73,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signin;

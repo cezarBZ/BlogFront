@@ -35,7 +35,12 @@ const Header = () => {
           </button>
 
           {openModal && (
-            <Modal top={45} right={20} width={200} close={() => setopenModal(false)}>
+            <Modal
+              top={45}
+              right={20}
+              width={200}
+              close={() => setopenModal(false)}
+            >
               <Options />
             </Modal>
           )}
