@@ -8,4 +8,10 @@ export interface IPost {
   likeCount: number;
   commentCount: number;
   createdBy: string;
+  user: {
+    id: number;
+    username: string;
+    email: string;
+    profilePictureUrl: string;
+  };
 }

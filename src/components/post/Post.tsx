@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Post.module.scss";
 import Image from "next/image";
-import memphis from "../../../public/memphis.jpg";
+import NoProfilePic from "../../../public/NoProfilePic.jpg";
 import example from "../../../public/example.png";
 import Favorite from "../favorite/Favorite";
 import CommentIcon from "@/icons/CommentIcon";
@@ -15,7 +15,6 @@ const Post = ({ post }: PostProps) => {
   const [isFavorite, setIsfavorite] = useState(false);
   const likeText = post.likeCount === 1 ? "Like" : "Likes";
   const commentText = post.commentCount === 1 ? "Comment" : "Comments";
-
   const favorite = () => {
     setIsfavorite(true);
   };
@@ -33,11 +32,14 @@ const Post = ({ post }: PostProps) => {
         <div className={styles.header}>
           <div className={styles.userInfos}>
             <div className={styles.imgContainer}>
-              <Image src={memphis} alt="author" />
+              <Image
+                src={post.user.profilePictureUrl ?? NoProfilePic}
+                alt="author"
+              />
             </div>
             <div className={styles.infos}>
               <Link href={""}>
-                <h3>{post.createdBy}</h3>
+                <h3>{post.user.username}</h3>
               </Link>
               <p>{post.createdAt}</p>
             </div>
