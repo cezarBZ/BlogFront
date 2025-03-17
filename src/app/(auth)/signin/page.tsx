@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./page.module.scss";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { login } from "@/services/authService";
+import { signin } from "@/services/authService";
 interface FormValues {
   email: string;
   password: string;
@@ -16,13 +16,13 @@ const Signin = () => {
   } = useForm<FormValues>();
 
   const onSubmit = async (data: FormValues) => {
-    await login(data).then();
+    await signin(data).then();
   };
 
   return (
     <main className={styles.page}>
       <section>
-        <h1>Login</h1>
+        <h1>Sign in</h1>
         <form onSubmit={(e) => e.preventDefault()}>
           <div className={styles.formGroup}>
             <label htmlFor="email">Email</label>

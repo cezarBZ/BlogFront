@@ -1,7 +1,7 @@
 import axiosClient from "./axiosClient";
 import { setCookie, destroyCookie } from "nookies";
 
-type loginCredentials = {
+type signinCredentials = {
   email: string;
   password: string;
 };
@@ -13,9 +13,9 @@ type signupCredentials = {
   password: string;
 };
 
-export const login = async (credentials: loginCredentials) => {
+export const signin = async (credentials: signinCredentials) => {
   try {
-    const response = await axiosClient.put("/user/login", credentials);
+    const response = await axiosClient.put("/user/signin", credentials);
     const { token } = response.data;
 
     setCookie(null, "token", token, {
@@ -33,7 +33,7 @@ export const login = async (credentials: loginCredentials) => {
 
 export const signup = async (credentials: signupCredentials) => {
   try {
-    const response = await axiosClient.post("/User/createUser", credentials);
+    const response = await axiosClient.post("/User/signup", credentials);
     const { data } = response.data;
 
     setCookie(null, "token", data.token, {
