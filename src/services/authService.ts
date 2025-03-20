@@ -15,7 +15,7 @@ type signupCredentials = {
 
 export const signin = async (credentials: signinCredentials) => {
   try {
-    const response = await axiosClient.put("/user/signin", credentials);
+    const response = await axiosClient.put("/Auth/signin", credentials);
     const { token } = response.data;
 
     setCookie(null, "token", token, {
@@ -33,7 +33,7 @@ export const signin = async (credentials: signinCredentials) => {
 
 export const signup = async (credentials: signupCredentials) => {
   try {
-    const response = await axiosClient.post("/User/signup", credentials);
+    const response = await axiosClient.post("/Auth/signup", credentials);
     const { data } = response.data;
 
     setCookie(null, "token", data.token, {
