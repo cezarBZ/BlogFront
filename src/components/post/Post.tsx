@@ -22,7 +22,7 @@ const Post = ({ post }: PostProps) => {
     setIsfavorite(false);
   };
   return (
-    <div className={styles.post}>
+    <div className={styles.post} data-testid="post-component">
       {post.coverImageUrl && (
         <div className={styles.cover}>
           <Image src={example} alt="cover" />
@@ -35,13 +35,15 @@ const Post = ({ post }: PostProps) => {
               <Image
                 src={post.user.profilePictureUrl ?? NoProfilePic}
                 alt="author"
+                width={50}
+                height={50}
               />
             </div>
             <div className={styles.infos}>
               <Link href={""}>
-                <h3>{post.user.username}</h3>
+                <h3 data-testid="post-author">{post.user.username}</h3>
               </Link>
-              <p>{post.createdAt}</p>
+              <p data-testid="post-date">{post.createdAt}</p>
             </div>
           </div>
           <Favorite
@@ -52,14 +54,14 @@ const Post = ({ post }: PostProps) => {
         </div>
         <div className={styles.content}>
           <Link href={""}>
-            <h1>{post.title}</h1>
+            <h1 data-testid="post-title">{post.title}</h1>
           </Link>
 
           <div className={styles.stats}>
-            <div className={styles.stat}>
+            <div className={styles.stat} data-testid="post-likes">
               <LikeIcon /> {post.likeCount} {likeText}
             </div>
-            <div className={styles.stat}>
+            <div className={styles.stat} data-testid="post-comments">
               <CommentIcon /> {post.commentCount} {commentText}
             </div>
           </div>
